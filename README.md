@@ -11,3 +11,7 @@ Boot appication to configure a Memcached client.
   <version>1.0.0</version>
 </dependency>
 ```
+
+```groovy
+compile('com.btmatthews.springboot:memcached-spring-boot-starter:1.0.0')
+```
