@@ -8,7 +8,7 @@ repositories {
 
 group = "com.btmatthews.springboot"
 archivesBaseName = "memcached-spring-boot-starter"
-version = "1.0.0-SNAPSHOT"
+version = "1.0.0"
 
 dependencies {
     compile('org.springframework.boot:spring-boot:1.3.3.RELEASE')
