@@ -15,7 +15,9 @@
  */
 package com.btmatthews.springboot.memcached;
 
+import net.spy.memcached.ConnectionFactory;
 import net.spy.memcached.MemcachedClient;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,8 +40,8 @@ public class MemcachedAutoConfiguration {
     private Environment environment;
 
     @Bean
-    public MemcachedClient memcachedClient() throws IOException {
-        final List<InetSocketAddress> addresses = new ArrayList<InetSocketAddress>();
+    public MemcachedClient memcachedClient(ObjectProvider<ConnectionFactory> connection) throws IOException {
+        final List<InetSocketAddress> addresses = new ArrayList<>();
         final String servers = environment.getProperty("memcached.servers");
         if (StringUtils.isEmpty(servers)) {
             addresses.add(new InetSocketAddress(LOCALHOST, DEFAULT_PORT));
@@ -54,6 +56,11 @@ public class MemcachedAutoConfiguration {
                 }
             }
         }
-        return new MemcachedClient(addresses);
+
+        ConnectionFactory con = connection.getIfUnique();
+
+        return con == null
+                ? new MemcachedClient(addresses)
+                : new MemcachedClient(con, addresses);
     }
 }

@@ -21,6 +21,27 @@ class Application {
 }
 ```
 
+Configuration
+-----
+If you want to use a specific connection settings, you can define a bean for it :
+
+```java
+@SpringBootApplication
+@EnableMemcached
+class Application {
+
+    @Bean
+    public ConnectionFactory memcachedConnection() {
+        return new ConnectionFactoryBuilder()
+                    .setDaemon(true)
+                    .setFailureMode(FailureMode.Cancel)
+                .build();
+    }
+
+}
+```
+
+
 Maven Central Coordinates
 -------------------------
 
@@ -35,7 +56,7 @@ The [Maven](http://maven.apache.org/) coordinates are:
 <dependency>
   <groupId>com.btmatthews.springboot</groupId>
   <artifactId>memcached-spring-boot-starter</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0-SNAPSHOT</version>
 </dependency>
 ```
 
@@ -44,7 +65,7 @@ The [Maven](http://maven.apache.org/) coordinates are:
 The [Gradle](http://gradle.org/) coordinates are:
 
 ```groovy
-compile('com.btmatthews.springboot:memcached-spring-boot-starter:1.0.0')
+compile('com.btmatthews.springboot:memcached-spring-boot-starter:1.1.0-SNAPSHOT')
 ```
 
 License & Source Code
