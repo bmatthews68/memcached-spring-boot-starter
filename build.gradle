@@ -11,7 +11,7 @@ archivesBaseName = "memcached-spring-boot-starter"
 version = "1.1.0-SNAPSHOT"
 
 dependencies {
-    compile('org.springframework.boot:spring-boot:1.5.5.RELEASE')
+    compile('org.springframework.boot:spring-boot:1.5.6.RELEASE')
     compile('net.spy:spymemcached:2.12.0')
 }
 
