@@ -56,7 +56,7 @@ The [Maven](http://maven.apache.org/) coordinates are:
 <dependency>
   <groupId>com.btmatthews.springboot</groupId>
   <artifactId>memcached-spring-boot-starter</artifactId>
-  <version>1.1.0-SNAPSHOT</version>
+  <version>1.1.0</version>
 </dependency>
 ```
 
@@ -74,3 +74,9 @@ The **Memcached Spring Boot Starter** is made available under the
 [Apache License](http://www.apache.org/licenses/LICENSE-2.0.html)
 and the source code is hosted on [GitHub](http://github.com) at 
 https://github.com/bmatthews68/memcached-spring-boot-starter.
+
+Contributors
+------------
+
+- [Brian Matthews](https://github.com/bmatthews68)
+- [Davin Kevin](https://github.com/davinkevin)
