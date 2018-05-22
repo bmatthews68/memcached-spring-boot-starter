@@ -2,7 +2,7 @@ Memcached Spring Boot Starter
 =============================
 
 A convenient dependency descriptor that you can include in your [Spring
-Boot](http://projects.spring.io/spring-boot/) appication to configure a
+Boot](http://projects.spring.io/spring-boot/) application to configure a
 [Memcached](http://memcached.org/) client.
  
 Usage
@@ -23,7 +23,7 @@ class Application {
 
 Configuration
 -----
-If you want to use a specific connection settings, you can define a bean for it :
+If you want to use specific connection settings, you can define a bean for it :
 
 ```java
 @SpringBootApplication
